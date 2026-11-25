@@ -37,16 +37,16 @@ export function CompareRemediationTab({ analysis, sessions, onToast }) {
   return (
     <div className="space-y-6">
       {/* Side-by-Side Comparison Card */}
-      <div className="glass-panel rounded-2xl p-6 space-y-4">
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-800 pb-3">
-          <h3 className="text-sm font-bold text-white flex items-center gap-2">
-            <GitCompare className="w-4 h-4 text-cyan-400" />
+      <div className="glass-panel rounded-[28px] p-6 space-y-4">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-white/10 pb-3.5">
+          <h3 className="font-serif italic text-lg text-white flex items-center gap-2">
+            <GitCompare className="w-4 h-4 text-[#a78b71]" />
             Session Comparison (Before vs. After Audit)
           </h3>
           <select
             value={compareId}
             onChange={(e) => handleCompareChange(e.target.value)}
-            className="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-700 text-xs text-slate-200 focus:outline-none focus:border-cyan-500"
+            className="px-4 py-2 rounded-full bg-[#0a0a0a] border border-white/15 text-xs text-white focus:outline-none focus:border-[#c9b8a0]"
           >
             <option value="">Select historical session to compare...</option>
             {sessions
@@ -65,24 +65,24 @@ export function CompareRemediationTab({ analysis, sessions, onToast }) {
               { title: 'Active Session', item: analysis },
               { title: 'Comparison Baseline', item: compareData },
             ].map(({ title, item }) => (
-              <div key={item.session_id} className="p-4 rounded-xl bg-slate-900/80 border border-slate-800 space-y-2">
+              <div key={item.session_id} className="p-5 rounded-[22px] bg-white/[0.02] border border-white/10 space-y-3">
                 <div className="flex items-center justify-between">
-                  <span className="text-[11px] uppercase text-slate-400 font-semibold">{title}</span>
-                  <span className="font-mono text-slate-500">{item.session_id}</span>
+                  <span className="text-[10px] uppercase tracking-[0.2em] text-[#a78b71] font-semibold">{title}</span>
+                  <span className="font-mono text-gray-400">{item.session_id}</span>
                 </div>
-                <div className="text-sm font-bold text-white truncate">{item.pcap_filename}</div>
+                <div className="font-serif italic text-base text-white truncate">{item.pcap_filename}</div>
                 <div className="grid grid-cols-3 gap-2 pt-2">
-                  <div className="p-2 rounded bg-slate-950/80 text-center">
-                    <div className="text-[10px] text-slate-400">Score</div>
-                    <div className="text-lg font-black text-emerald-400">{item.score_breakdown.overall_score}</div>
+                  <div className="p-3 rounded-xl bg-black/50 border border-white/5 text-center">
+                    <div className="text-[10px] text-gray-400">Score</div>
+                    <div className="text-xl font-bold text-[#e8d5b7]">{item.score_breakdown.overall_score}</div>
                   </div>
-                  <div className="p-2 rounded bg-slate-950/80 text-center">
-                    <div className="text-[10px] text-slate-400">Threats</div>
-                    <div className="text-lg font-black text-rose-400">{item.threat_matrix.length}</div>
+                  <div className="p-3 rounded-xl bg-black/50 border border-white/5 text-center">
+                    <div className="text-[10px] text-gray-400">Threats</div>
+                    <div className="text-xl font-bold text-[#f5a3ab]">{item.threat_matrix.length}</div>
                   </div>
-                  <div className="p-2 rounded bg-slate-950/80 text-center">
-                    <div className="text-[10px] text-slate-400">IKE / Mode</div>
-                    <div className="text-xs font-bold text-cyan-300 mt-1">
+                  <div className="p-3 rounded-xl bg-black/50 border border-white/5 text-center">
+                    <div className="text-[10px] text-gray-400">IKE / Mode</div>
+                    <div className="text-xs font-bold text-[#c9b8a0] mt-1">
                       {item.security_association.ike_version} • {item.security_association.mode}
                     </div>
                   </div>
@@ -91,31 +91,31 @@ export function CompareRemediationTab({ analysis, sessions, onToast }) {
             ))}
           </div>
         ) : (
-          <p className="text-xs text-slate-400">
-            Analyze multiple samples (e.g., Vulnerable IKEv1 and Hardened IKEv2), then pick a baseline above to compare security scores side-by-side.
+          <p className="text-xs text-gray-400">
+            Analyze multiple profiles (e.g., Vulnerable IKEv1 and Hardened IKEv2), then pick a baseline above to compare security posture side-by-side.
           </p>
         )}
       </div>
 
       {/* Context-Aware Remediation & Report Export */}
-      <div className="glass-panel rounded-2xl p-6 space-y-4">
-        <div className="flex flex-col md:flex-row md:items-center justify-between gap-3 border-b border-slate-800 pb-3">
+      <div className="glass-panel rounded-[28px] p-6 space-y-4">
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-3 border-b border-white/10 pb-3.5">
           <div>
-            <h3 className="text-sm font-bold text-white flex items-center gap-2">
-              <Wrench className="w-4 h-4 text-amber-400" />
-              Context-Aware Hardened Remediation Generator
+            <h3 className="font-serif italic text-lg text-white flex items-center gap-2">
+              <Wrench className="w-4 h-4 text-[#a78b71]" />
+              Context-Aware Hardened Remediation
             </h3>
-            <p className="text-xs text-slate-400 mt-0.5">{activeCfg?.description}</p>
+            <p className="text-xs text-gray-400 mt-1">{activeCfg?.description}</p>
           </div>
-          <div className="flex flex-wrap gap-1.5">
+          <div className="flex flex-wrap gap-2">
             {configs.map((c, idx) => (
               <button
                 key={c.platform}
                 onClick={() => setPlatformIdx(idx)}
-                className={`px-3 py-1.5 text-xs rounded-lg font-medium transition ${
+                className={`px-4 py-1.5 text-xs rounded-full font-medium transition ${
                   platformIdx === idx
-                    ? 'bg-emerald-600 text-white'
-                    : 'bg-slate-800 hover:bg-slate-700 text-slate-300'
+                    ? 'bg-white text-black font-semibold'
+                    : 'glass-panel text-gray-300 hover:text-[#e8d5b7]'
                 }`}
               >
                 {c.platform}
@@ -125,10 +125,12 @@ export function CompareRemediationTab({ analysis, sessions, onToast }) {
         </div>
 
         {activeCfg?.addressed_issues?.length > 0 && (
-          <div className="p-3 rounded-xl bg-amber-500/5 border border-amber-500/20 space-y-1">
-            <div className="text-[11px] font-bold text-amber-300">Targeted Issues Patched:</div>
+          <div className="p-4 rounded-[20px] bg-[#a78b71]/10 border border-[#a78b71]/30 space-y-1">
+            <div className="text-[10px] uppercase tracking-[0.18em] font-bold text-[#e8d5b7]">
+              Targeted Issues Patched
+            </div>
             {activeCfg.addressed_issues.map((issue, i) => (
-              <div key={i} className="text-[11px] text-slate-300 font-mono">• {issue}</div>
+              <div key={i} className="text-[11px] text-gray-200 font-mono">• {issue}</div>
             ))}
           </div>
         )}
@@ -136,34 +138,34 @@ export function CompareRemediationTab({ analysis, sessions, onToast }) {
         <div className="relative">
           <button
             onClick={handleCopy}
-            className="absolute top-3 right-3 text-xs px-3 py-1.5 bg-slate-800 hover:bg-slate-700 text-slate-200 rounded-lg border border-slate-700 flex items-center gap-1.5 transition"
+            className="absolute top-3 right-3 text-xs px-3.5 py-1.5 rounded-full bg-white/10 hover:bg-white hover:text-black text-white border border-white/15 flex items-center gap-1.5 transition"
           >
-            {copied ? <Check className="w-3.5 h-3.5 text-emerald-400" /> : <Copy className="w-3.5 h-3.5" />}
+            {copied ? <Check className="w-3.5 h-3.5" /> : <Copy className="w-3.5 h-3.5" />}
             {copied ? 'Copied' : 'Copy Config'}
           </button>
-          <pre className="p-4 rounded-xl bg-[#04070d] font-mono text-xs text-emerald-300 overflow-x-auto max-h-80 border border-slate-800">
+          <pre className="p-5 rounded-[22px] bg-[#050505] font-mono text-xs text-[#e8d5b7] overflow-x-auto max-h-80 border border-white/10">
             {activeCfg?.config_snippet}
           </pre>
         </div>
 
-        <div className="flex flex-wrap items-center justify-end gap-2 pt-2 border-t border-slate-800">
+        <div className="flex flex-wrap items-center justify-end gap-2.5 pt-3 border-t border-white/10">
           <button
             onClick={() => window.open(`/api/report/pdf/${analysis.session_id}`, '_blank')}
-            className="px-4 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold flex items-center gap-2 transition"
+            className="px-5 py-2.5 rounded-full bg-white hover:bg-[#e8d5b7] text-black text-xs font-bold flex items-center gap-2 transition"
           >
             <FileDown className="w-4 h-4" /> Download Executive PDF
           </button>
           <button
             onClick={() => window.open(`/api/report/markdown/${analysis.session_id}`, '_blank')}
-            className="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 text-xs font-semibold flex items-center gap-2 transition"
+            className="px-4 py-2.5 rounded-full glass-panel hover:border-[#a78b71]/50 text-white text-xs font-semibold flex items-center gap-2 transition"
           >
-            <FileText className="w-4 h-4" /> Export Technical Markdown
+            <FileText className="w-4 h-4 text-[#c9b8a0]" /> Technical Markdown
           </button>
           <button
             onClick={() => window.open(`/api/report/json/${analysis.session_id}`, '_blank')}
-            className="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 text-xs font-semibold flex items-center gap-2 transition"
+            className="px-4 py-2.5 rounded-full glass-panel hover:border-[#a78b71]/50 text-white text-xs font-semibold flex items-center gap-2 transition"
           >
-            <FileCode className="w-4 h-4" /> Export Raw JSON
+            <FileCode className="w-4 h-4 text-[#c9b8a0]" /> Export Raw JSON
           </button>
         </div>
       </div>
