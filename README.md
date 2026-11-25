@@ -20,9 +20,9 @@ An end-to-end cybersecurity platform built to inspect IPsec VPN deployments acro
 4. **Compliance, Dynamic Risk Scoring & Context-Aware Remediation (`compliance_engine.py`, `remediation_generator.py`):**
    - Scores deployments across 5 weighted dimensions (Crypto Strength, Key Exchange, Operational Hygiene, PQC Readiness, Traffic Exposure).
    - Generates tailored **StrongSwan (`swanctl.conf`)**, **Cisco IOS-XE CLI**, and **VyOS** patches referencing extracted peer IPs and failing rules.
-5. **Modern React SOC Dashboard & Multi-Tier Reporting (`frontend/`, `report_generator.py`):**
-   - Built offline with **React 18 + Vite + Tailwind CSS + Recharts + Lucide Icons**.
-   - 5 analyst views: **Overview & Risk**, **IKE Inspector**, **AI Traffic Lab**, **Active IKE Scanner**, and **Compare & Remediation**.
+5. **Multi-Page React SOC Dashboard & Multi-Tier Reporting (`frontend/`, `report_generator.py`):**
+   - Built with **React 18 + React Router v6 + Vite + Tailwind CSS + Recharts + Lucide Icons** using an obsidian `#0a0a0a` & gold `#a78b71` aesthetic.
+   - 6 dedicated routed pages with FastAPI SPA fallback: `/` (**Command Center**), `/overview` (**Posture & Risk**), `/inspector` (**IKE Inspector**), `/traffic-lab` (**AI Traffic Lab**), `/scanner` (**Active Scanner**), and `/remediation` (**Compare & Remediation**).
    - Exports publication-ready **Executive PDF**, **Technical Markdown**, and **JSON** reports with SQLite session history (`datasets/sessions.db`).
 
 ---
@@ -44,9 +44,10 @@ IPSEC_VPN_ANALYSER/
 │       ├── session_store.py         # SQLite session persistence
 │       ├── report_generator.py      # Executive PDF + Technical Markdown reports
 │       └── analyzer_service.py      # Master orchestrator
-├── frontend/                        # React + Vite + Tailwind + Recharts SPA
-│   ├── src/components/              # Overview, Inspector, TrafficLab, Scanner, Compare
-│   └── dist/                        # Compiled offline production bundle
+├── frontend/                        # React 18 + React Router v6 + Vite + Tailwind SPA
+│   ├── src/pages/                   # Home, Overview, Inspector, TrafficLab, Scanner, Remediation
+│   ├── src/components/              # Shared Layout shell + interactive analysis panels
+│   └── dist/                        # Compiled production bundle served by FastAPI
 ├── testbed/
 │   ├── docker-compose.yml           # 2-node StrongSwan Alpine Linux VPN lab
 │   ├── configs/peer-a & peer-b/     # StrongSwan swanctl.conf endpoint profiles
