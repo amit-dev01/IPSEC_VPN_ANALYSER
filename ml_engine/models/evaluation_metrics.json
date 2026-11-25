@@ -1,0 +1,387 @@
+{
+  "ipsec_windowed_benchmark": {
+    "best_model": "LightGBM",
+    "leaderboard": [
+      {
+        "model": "LightGBM",
+        "cv_accuracy": 100.0,
+        "macro_f1": 100.0,
+        "weighted_f1": 100.0,
+        "cv_time_sec": 0.69
+      },
+      {
+        "model": "ExtraTrees",
+        "cv_accuracy": 100.0,
+        "macro_f1": 100.0,
+        "weighted_f1": 100.0,
+        "cv_time_sec": 0.92
+      },
+      {
+        "model": "Neural MLP",
+        "cv_accuracy": 100.0,
+        "macro_f1": 100.0,
+        "weighted_f1": 100.0,
+        "cv_time_sec": 1.56
+      },
+      {
+        "model": "XGBoost",
+        "cv_accuracy": 99.38,
+        "macro_f1": 99.4,
+        "weighted_f1": 99.38,
+        "cv_time_sec": 1.2
+      }
+    ],
+    "confusion_matrix": [
+      [
+        65,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        71,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        75,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        68,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        66,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        71,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        69
+      ]
+    ],
+    "class_names": [
+      "VoIP",
+      "Video",
+      "Web",
+      "Messaging",
+      "WhatsApp",
+      "Email",
+      "ICMP"
+    ],
+    "per_class_metrics": [
+      {
+        "label": "VoIP",
+        "precision": 100.0,
+        "recall": 100.0,
+        "f1_score": 100.0,
+        "support": 65
+      },
+      {
+        "label": "Video",
+        "precision": 100.0,
+        "recall": 100.0,
+        "f1_score": 100.0,
+        "support": 71
+      },
+      {
+        "label": "Web",
+        "precision": 100.0,
+        "recall": 100.0,
+        "f1_score": 100.0,
+        "support": 75
+      },
+      {
+        "label": "Messaging",
+        "precision": 100.0,
+        "recall": 100.0,
+        "f1_score": 100.0,
+        "support": 68
+      },
+      {
+        "label": "WhatsApp",
+        "precision": 100.0,
+        "recall": 100.0,
+        "f1_score": 100.0,
+        "support": 66
+      },
+      {
+        "label": "Email",
+        "precision": 100.0,
+        "recall": 100.0,
+        "f1_score": 100.0,
+        "support": 71
+      },
+      {
+        "label": "ICMP",
+        "precision": 100.0,
+        "recall": 100.0,
+        "f1_score": 100.0,
+        "support": 69
+      }
+    ],
+    "total_samples": 485,
+    "cv_folds": 5
+  },
+  "mode_cv_accuracy": 99.59,
+  "global_shap_importance": [
+    {
+      "feature": "min_packet_size",
+      "mean_abs_shap": 0.958
+    },
+    {
+      "feature": "std_packet_size",
+      "mean_abs_shap": 0.7473
+    },
+    {
+      "feature": "mean_packet_size",
+      "mean_abs_shap": 0.6902
+    },
+    {
+      "feature": "iat_mean_ms",
+      "mean_abs_shap": 0.548
+    },
+    {
+      "feature": "iat_std_ms",
+      "mean_abs_shap": 0.3666
+    },
+    {
+      "feature": "byte_rate_bps",
+      "mean_abs_shap": 0.2694
+    },
+    {
+      "feature": "max_packet_size",
+      "mean_abs_shap": 0.2408
+    },
+    {
+      "feature": "p50_packet_size",
+      "mean_abs_shap": 0.2286
+    },
+    {
+      "feature": "iat_p50_ms",
+      "mean_abs_shap": 0.0849
+    },
+    {
+      "feature": "packet_rate_pps",
+      "mean_abs_shap": 0.0423
+    },
+    {
+      "feature": "burst_ratio",
+      "mean_abs_shap": 0.0146
+    },
+    {
+      "feature": "entropy_score",
+      "mean_abs_shap": 0.008
+    },
+    {
+      "feature": "p25_packet_size",
+      "mean_abs_shap": 0.0034
+    },
+    {
+      "feature": "p75_packet_size",
+      "mean_abs_shap": 0.0032
+    }
+  ],
+  "iscx_vpn2016_benchmark": {
+    "best_model": "LightGBM",
+    "leaderboard": [
+      {
+        "model": "LightGBM",
+        "cv_accuracy": 90.18,
+        "macro_f1": 88.82,
+        "weighted_f1": 90.13,
+        "cv_time_sec": 6.88
+      },
+      {
+        "model": "XGBoost",
+        "cv_accuracy": 89.75,
+        "macro_f1": 88.53,
+        "weighted_f1": 89.66,
+        "cv_time_sec": 9.37
+      },
+      {
+        "model": "ExtraTrees",
+        "cv_accuracy": 84.88,
+        "macro_f1": 83.29,
+        "weighted_f1": 84.65,
+        "cv_time_sec": 5.57
+      },
+      {
+        "model": "Neural MLP",
+        "cv_accuracy": 80.65,
+        "macro_f1": 78.3,
+        "weighted_f1": 80.3,
+        "cv_time_sec": 112.92
+      }
+    ],
+    "confusion_matrix": [
+      [
+        2354,
+        70,
+        54,
+        0,
+        13,
+        8,
+        1
+      ],
+      [
+        105,
+        912,
+        114,
+        24,
+        37,
+        3,
+        1
+      ],
+      [
+        95,
+        107,
+        1637,
+        35,
+        50,
+        4,
+        4
+      ],
+      [
+        4,
+        26,
+        44,
+        408,
+        7,
+        0,
+        2
+      ],
+      [
+        22,
+        11,
+        44,
+        4,
+        831,
+        13,
+        3
+      ],
+      [
+        4,
+        0,
+        10,
+        0,
+        17,
+        444,
+        0
+      ],
+      [
+        3,
+        4,
+        9,
+        0,
+        10,
+        0,
+        2245
+      ]
+    ],
+    "class_names": [
+      "VPN-BROWSING",
+      "VPN-CHAT",
+      "VPN-FT",
+      "VPN-MAIL",
+      "VPN-P2P",
+      "VPN-STREAMING",
+      "VPN-VOIP"
+    ],
+    "per_class_metrics": [
+      {
+        "label": "VPN-BROWSING",
+        "precision": 91.0,
+        "recall": 94.2,
+        "f1_score": 92.5,
+        "support": 2500
+      },
+      {
+        "label": "VPN-CHAT",
+        "precision": 80.7,
+        "recall": 76.3,
+        "f1_score": 78.4,
+        "support": 1196
+      },
+      {
+        "label": "VPN-FT",
+        "precision": 85.6,
+        "recall": 84.7,
+        "f1_score": 85.2,
+        "support": 1932
+      },
+      {
+        "label": "VPN-MAIL",
+        "precision": 86.6,
+        "recall": 83.1,
+        "f1_score": 84.8,
+        "support": 491
+      },
+      {
+        "label": "VPN-P2P",
+        "precision": 86.1,
+        "recall": 89.5,
+        "f1_score": 87.8,
+        "support": 928
+      },
+      {
+        "label": "VPN-STREAMING",
+        "precision": 94.1,
+        "recall": 93.5,
+        "f1_score": 93.8,
+        "support": 475
+      },
+      {
+        "label": "VPN-VOIP",
+        "precision": 99.5,
+        "recall": 98.9,
+        "f1_score": 99.2,
+        "support": 2271
+      }
+    ],
+    "total_samples": 9793,
+    "cv_folds": 5
+  },
+  "anomaly_detector": {
+    "algorithm": "IsolationForest",
+    "n_estimators": 150,
+    "contamination": 0.04,
+    "training_flows": 485
+  }
+}
