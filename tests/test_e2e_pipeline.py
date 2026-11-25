@@ -23,6 +23,9 @@ def test_full_analysis_pipeline_hardened():
     assert result.esp_packets_count > 0
     assert len(result.ike_timeline) > 0
     assert len(result.traffic_predictions) > 0
+    assert len(result.traffic_predictions[0].shap_explanations) > 0
+    assert result.traffic_predictions[0].iscx_secondary_prediction is not None
+    assert 0.0 <= result.traffic_predictions[0].anomaly_score <= 1.0
     assert len(result.esp_flows[0].size_histogram) == 6
     assert result.score_breakdown.overall_score >= 80
 

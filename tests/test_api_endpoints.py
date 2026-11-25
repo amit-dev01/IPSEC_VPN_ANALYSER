@@ -29,6 +29,11 @@ def test_samples_and_testbed_endpoints():
     assert tb_res.status_code == 200
     assert "docker_running" in tb_res.json()
 
+    ml_res = client.get("/api/ml/metrics")
+    assert ml_res.status_code == 200
+    assert ml_res.json().get("available") is True
+    assert len(ml_res.json()["iscx_vpn2016_benchmark"]["leaderboard"]) == 4
+
 
 def test_analyze_sample_history_and_export_reports():
     res = client.post("/api/analyze/sample/hardened_ikev2_tunnel_web.pcap")

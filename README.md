@@ -9,10 +9,12 @@ An end-to-end cybersecurity platform built to inspect IPsec VPN deployments acro
 1. **Deep Deterministic Dissection (`ike_dissector.py`):**
    - Dissects IKEv1 (Main/Aggressive Mode) and IKEv2 (`IKE_SA_INIT`, `IKE_AUTH`, `CREATE_CHILD_SA`) handshakes over IPv4 and IPv6, including NAT-T (UDP 4500) and AH (Protocol 51).
    - Audits every offered proposal for **cipher downgrade risks**, parses Notify payloads (`USE_TRANSPORT_MODE`), tracks Extended Sequence Numbers (`ESN`), and checks ESP sequence monotonicity for anti-replay anomalies.
-2. **7-Class Encrypted ESP Traffic ML & Anomaly Detection (`esp_feature_extractor.py`, `classifier.py`):**
-   - Extracts 14 statistical flow dynamics (size percentiles, histograms, IAT burstiness, Shannon entropy, direction ratio) without decrypting payloads.
-   - Classifies flows into **VoIP**, **Video Streaming**, **Web Browsing**, **Messaging**, **WhatsApp**, **Email**, and **ICMP**, and infers **Tunnel vs. Transport** mode.
-   - Flags covert behaviors: `C2_BEACON_SUSPECTED`, `COVERT_LOW_ENTROPY`, and `EXFILTRATION_BURST_SKEW`.
+2. **Multi-Model Encrypted ESP Traffic ML, SHAP & Anomaly Detection (`esp_feature_extractor.py`, `classifier.py`, `train_model.py`):**
+   - Extracts **14 statistical flow features** plus **23 UNB ISCXFlowMeter microsecond features** without decrypting payloads.
+   - **Primary Classifier (`LightGBM`):** Classifies flows into **VoIP**, **Video Streaming**, **Web Browsing**, **Messaging**, **WhatsApp**, **Email**, and **ICMP** (`100.0%` 5-fold CV on 485 windowed IPsec flows; `99.59%` Tunnel/Transport mode inference accuracy).
+   - **Real-World UNB ISCX-VPN2016 Validation:** Benchmarked via 5-Fold Stratified CV across **9,793 real VPN flows** (`LightGBM: 90.18%`, `XGBoost: 89.75%`, `ExtraTrees: 84.88%`, `Neural MLP: 80.65%`) with secondary cross-check predictions per uploaded flow.
+   - **True Per-Flow Explainable AI (`shap.TreeExplainer`):** Emits signed Shapley log-odds contributions for every flow prediction.
+   - **Zero-Day Anomaly Detection (`IsolationForest`):** Computes unsupervised outlier scores alongside rule-based flags (`C2_BEACON_SUSPECTED`, `COVERT_LOW_ENTROPY`, `EXFILTRATION_BURST_SKEW`, `ML_OUTLIER_ANOMALY`).
 3. **Active IKE Gateway Scanner (`ike_scanner.py`):**
    - Sends non-destructive UDP IKEv2 and IKEv1 cipher/DH probes to live VPN endpoints (plus local loopback targets `demo-hardened-gw` and `demo-vulnerable-gw`) to grade accepted suites (`A+` to `F`).
 4. **Compliance, Dynamic Risk Scoring & Context-Aware Remediation (`compliance_engine.py`, `remediation_generator.py`):**
