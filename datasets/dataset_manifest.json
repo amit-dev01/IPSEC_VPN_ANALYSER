@@ -1,0 +1,534 @@
+[
+  {
+    "filename": "hardened_ikev2_tunnel_web.pcap",
+    "path": "datasets\\samples\\hardened_ikev2_tunnel_web.pcap",
+    "mode": "TUNNEL",
+    "traffic_type": "WEB",
+    "split": "sample"
+  },
+  {
+    "filename": "vulnerable_ikev1_transport_msg.pcap",
+    "path": "datasets\\samples\\vulnerable_ikev1_transport_msg.pcap",
+    "mode": "TRANSPORT",
+    "traffic_type": "MESSAGING",
+    "split": "sample"
+  },
+  {
+    "filename": "enterprise_ikev2_tunnel_video.pcap",
+    "path": "datasets\\samples\\enterprise_ikev2_tunnel_video.pcap",
+    "mode": "TUNNEL",
+    "traffic_type": "VIDEO",
+    "split": "sample"
+  },
+  {
+    "filename": "hardened_ikev2_tunnel_voip.pcap",
+    "path": "datasets\\samples\\hardened_ikev2_tunnel_voip.pcap",
+    "mode": "TUNNEL",
+    "traffic_type": "VOIP",
+    "split": "sample"
+  },
+  {
+    "filename": "ipv6_natt_whatsapp_tunnel.pcap",
+    "path": "datasets\\samples\\ipv6_natt_whatsapp_tunnel.pcap",
+    "mode": "TUNNEL",
+    "traffic_type": "WHATSAPP",
+    "split": "sample"
+  },
+  {
+    "filename": "cbc_downgrade_email_audit.pcap",
+    "path": "datasets\\samples\\cbc_downgrade_email_audit.pcap",
+    "mode": "TUNNEL",
+    "traffic_type": "EMAIL",
+    "split": "sample"
+  },
+  {
+    "filename": "train_voip_tunnel_1.pcap",
+    "path": "datasets\\training\\train_voip_tunnel_1.pcap",
+    "mode": "TUNNEL",
+    "traffic_type": "VOIP",
+    "split": "train"
+  },
+  {
+    "filename": "train_voip_tunnel_2.pcap",
+    "path": "datasets\\training\\train_voip_tunnel_2.pcap",
+    "mode": "TUNNEL",
+    "traffic_type": "VOIP",
+    "split": "train"
+  },
+  {
+    "filename": "train_voip_tunnel_3.pcap",
+    "path": "datasets\\training\\train_voip_tunnel_3.pcap",
+    "mode": "TUNNEL",
+    "traffic_type": "VOIP",
+    "split": "train"
+  },
+  {
+    "filename": "train_voip_tunnel_4.pcap",
+    "path": "datasets\\training\\train_voip_tunnel_4.pcap",
+    "mode": "TUNNEL",
+    "traffic_type": "VOIP",
+    "split": "train"
+  },
+  {
+    "filename": "train_voip_tunnel_5.pcap",
+    "path": "datasets\\training\\train_voip_tunnel_5.pcap",
+    "mode": "TUNNEL",
+    "traffic_type": "VOIP",
+    "split": "train"
+  },
+  {
+    "filename": "train_voip_transport_1.pcap",
+    "path": "datasets\\training\\train_voip_transport_1.pcap",
+    "mode": "TRANSPORT",
+    "traffic_type": "VOIP",
+    "split": "train"
+  },
+  {
+    "filename": "train_voip_transport_2.pcap",
+    "path": "datasets\\training\\train_voip_transport_2.pcap",
+    "mode": "TRANSPORT",
+    "traffic_type": "VOIP",
+    "split": "train"
+  },
+  {
+    "filename": "train_voip_transport_3.pcap",
+    "path": "datasets\\training\\train_voip_transport_3.pcap",
+    "mode": "TRANSPORT",
+    "traffic_type": "VOIP",
+    "split": "train"
+  },
+  {
+    "filename": "train_voip_transport_4.pcap",
+    "path": "datasets\\training\\train_voip_transport_4.pcap",
+    "mode": "TRANSPORT",
+    "traffic_type": "VOIP",
+    "split": "train"
+  },
+  {
+    "filename": "train_voip_transport_5.pcap",
+    "path": "datasets\\training\\train_voip_transport_5.pcap",
+    "mode": "TRANSPORT",
+    "traffic_type": "VOIP",
+    "split": "train"
+  },
+  {
+    "filename": "train_video_tunnel_1.pcap",
+    "path": "datasets\\training\\train_video_tunnel_1.pcap",
+    "mode": "TUNNEL",
+    "traffic_type": "VIDEO",
+    "split": "train"
+  },
+  {
+    "filename": "train_video_tunnel_2.pcap",
+    "path": "datasets\\training\\train_video_tunnel_2.pcap",
+    "mode": "TUNNEL",
+    "traffic_type": "VIDEO",
+    "split": "train"
+  },
+  {
+    "filename": "train_video_tunnel_3.pcap",
+    "path": "datasets\\training\\train_video_tunnel_3.pcap",
+    "mode": "TUNNEL",
+    "traffic_type": "VIDEO",
+    "split": "train"
+  },
+  {
+    "filename": "train_video_tunnel_4.pcap",
+    "path": "datasets\\training\\train_video_tunnel_4.pcap",
+    "mode": "TUNNEL",
+    "traffic_type": "VIDEO",
+    "split": "train"
+  },
+  {
+    "filename": "train_video_tunnel_5.pcap",
+    "path": "datasets\\training\\train_video_tunnel_5.pcap",
+    "mode": "TUNNEL",
+    "traffic_type": "VIDEO",
+    "split": "train"
+  },
+  {
+    "filename": "train_video_transport_1.pcap",
+    "path": "datasets\\training\\train_video_transport_1.pcap",
+    "mode": "TRANSPORT",
+    "traffic_type": "VIDEO",
+    "split": "train"
+  },
+  {
+    "filename": "train_video_transport_2.pcap",
+    "path": "datasets\\training\\train_video_transport_2.pcap",
+    "mode": "TRANSPORT",
+    "traffic_type": "VIDEO",
+    "split": "train"
+  },
+  {
+    "filename": "train_video_transport_3.pcap",
+    "path": "datasets\\training\\train_video_transport_3.pcap",
+    "mode": "TRANSPORT",
+    "traffic_type": "VIDEO",
+    "split": "train"
+  },
+  {
+    "filename": "train_video_transport_4.pcap",
+    "path": "datasets\\training\\train_video_transport_4.pcap",
+    "mode": "TRANSPORT",
+    "traffic_type": "VIDEO",
+    "split": "train"
+  },
+  {
+    "filename": "train_video_transport_5.pcap",
+    "path": "datasets\\training\\train_video_transport_5.pcap",
+    "mode": "TRANSPORT",
+    "traffic_type": "VIDEO",
+    "split": "train"
+  },
+  {
+    "filename": "train_web_tunnel_1.pcap",
+    "path": "datasets\\training\\train_web_tunnel_1.pcap",
+    "mode": "TUNNEL",
+    "traffic_type": "WEB",
+    "split": "train"
+  },
+  {
+    "filename": "train_web_tunnel_2.pcap",
+    "path": "datasets\\training\\train_web_tunnel_2.pcap",
+    "mode": "TUNNEL",
+    "traffic_type": "WEB",
+    "split": "train"
+  },
+  {
+    "filename": "train_web_tunnel_3.pcap",
+    "path": "datasets\\training\\train_web_tunnel_3.pcap",
+    "mode": "TUNNEL",
+    "traffic_type": "WEB",
+    "split": "train"
+  },
+  {
+    "filename": "train_web_tunnel_4.pcap",
+    "path": "datasets\\training\\train_web_tunnel_4.pcap",
+    "mode": "TUNNEL",
+    "traffic_type": "WEB",
+    "split": "train"
+  },
+  {
+    "filename": "train_web_tunnel_5.pcap",
+    "path": "datasets\\training\\train_web_tunnel_5.pcap",
+    "mode": "TUNNEL",
+    "traffic_type": "WEB",
+    "split": "train"
+  },
+  {
+    "filename": "train_web_transport_1.pcap",
+    "path": "datasets\\training\\train_web_transport_1.pcap",
+    "mode": "TRANSPORT",
+    "traffic_type": "WEB",
+    "split": "train"
+  },
+  {
+    "filename": "train_web_transport_2.pcap",
+    "path": "datasets\\training\\train_web_transport_2.pcap",
+    "mode": "TRANSPORT",
+    "traffic_type": "WEB",
+    "split": "train"
+  },
+  {
+    "filename": "train_web_transport_3.pcap",
+    "path": "datasets\\training\\train_web_transport_3.pcap",
+    "mode": "TRANSPORT",
+    "traffic_type": "WEB",
+    "split": "train"
+  },
+  {
+    "filename": "train_web_transport_4.pcap",
+    "path": "datasets\\training\\train_web_transport_4.pcap",
+    "mode": "TRANSPORT",
+    "traffic_type": "WEB",
+    "split": "train"
+  },
+  {
+    "filename": "train_web_transport_5.pcap",
+    "path": "datasets\\training\\train_web_transport_5.pcap",
+    "mode": "TRANSPORT",
+    "traffic_type": "WEB",
+    "split": "train"
+  },
+  {
+    "filename": "train_messaging_tunnel_1.pcap",
+    "path": "datasets\\training\\train_messaging_tunnel_1.pcap",
+    "mode": "TUNNEL",
+    "traffic_type": "MESSAGING",
+    "split": "train"
+  },
+  {
+    "filename": "train_messaging_tunnel_2.pcap",
+    "path": "datasets\\training\\train_messaging_tunnel_2.pcap",
+    "mode": "TUNNEL",
+    "traffic_type": "MESSAGING",
+    "split": "train"
+  },
+  {
+    "filename": "train_messaging_tunnel_3.pcap",
+    "path": "datasets\\training\\train_messaging_tunnel_3.pcap",
+    "mode": "TUNNEL",
+    "traffic_type": "MESSAGING",
+    "split": "train"
+  },
+  {
+    "filename": "train_messaging_tunnel_4.pcap",
+    "path": "datasets\\training\\train_messaging_tunnel_4.pcap",
+    "mode": "TUNNEL",
+    "traffic_type": "MESSAGING",
+    "split": "train"
+  },
+  {
+    "filename": "train_messaging_tunnel_5.pcap",
+    "path": "datasets\\training\\train_messaging_tunnel_5.pcap",
+    "mode": "TUNNEL",
+    "traffic_type": "MESSAGING",
+    "split": "train"
+  },
+  {
+    "filename": "train_messaging_transport_1.pcap",
+    "path": "datasets\\training\\train_messaging_transport_1.pcap",
+    "mode": "TRANSPORT",
+    "traffic_type": "MESSAGING",
+    "split": "train"
+  },
+  {
+    "filename": "train_messaging_transport_2.pcap",
+    "path": "datasets\\training\\train_messaging_transport_2.pcap",
+    "mode": "TRANSPORT",
+    "traffic_type": "MESSAGING",
+    "split": "train"
+  },
+  {
+    "filename": "train_messaging_transport_3.pcap",
+    "path": "datasets\\training\\train_messaging_transport_3.pcap",
+    "mode": "TRANSPORT",
+    "traffic_type": "MESSAGING",
+    "split": "train"
+  },
+  {
+    "filename": "train_messaging_transport_4.pcap",
+    "path": "datasets\\training\\train_messaging_transport_4.pcap",
+    "mode": "TRANSPORT",
+    "traffic_type": "MESSAGING",
+    "split": "train"
+  },
+  {
+    "filename": "train_messaging_transport_5.pcap",
+    "path": "datasets\\training\\train_messaging_transport_5.pcap",
+    "mode": "TRANSPORT",
+    "traffic_type": "MESSAGING",
+    "split": "train"
+  },
+  {
+    "filename": "train_whatsapp_tunnel_1.pcap",
+    "path": "datasets\\training\\train_whatsapp_tunnel_1.pcap",
+    "mode": "TUNNEL",
+    "traffic_type": "WHATSAPP",
+    "split": "train"
+  },
+  {
+    "filename": "train_whatsapp_tunnel_2.pcap",
+    "path": "datasets\\training\\train_whatsapp_tunnel_2.pcap",
+    "mode": "TUNNEL",
+    "traffic_type": "WHATSAPP",
+    "split": "train"
+  },
+  {
+    "filename": "train_whatsapp_tunnel_3.pcap",
+    "path": "datasets\\training\\train_whatsapp_tunnel_3.pcap",
+    "mode": "TUNNEL",
+    "traffic_type": "WHATSAPP",
+    "split": "train"
+  },
+  {
+    "filename": "train_whatsapp_tunnel_4.pcap",
+    "path": "datasets\\training\\train_whatsapp_tunnel_4.pcap",
+    "mode": "TUNNEL",
+    "traffic_type": "WHATSAPP",
+    "split": "train"
+  },
+  {
+    "filename": "train_whatsapp_tunnel_5.pcap",
+    "path": "datasets\\training\\train_whatsapp_tunnel_5.pcap",
+    "mode": "TUNNEL",
+    "traffic_type": "WHATSAPP",
+    "split": "train"
+  },
+  {
+    "filename": "train_whatsapp_transport_1.pcap",
+    "path": "datasets\\training\\train_whatsapp_transport_1.pcap",
+    "mode": "TRANSPORT",
+    "traffic_type": "WHATSAPP",
+    "split": "train"
+  },
+  {
+    "filename": "train_whatsapp_transport_2.pcap",
+    "path": "datasets\\training\\train_whatsapp_transport_2.pcap",
+    "mode": "TRANSPORT",
+    "traffic_type": "WHATSAPP",
+    "split": "train"
+  },
+  {
+    "filename": "train_whatsapp_transport_3.pcap",
+    "path": "datasets\\training\\train_whatsapp_transport_3.pcap",
+    "mode": "TRANSPORT",
+    "traffic_type": "WHATSAPP",
+    "split": "train"
+  },
+  {
+    "filename": "train_whatsapp_transport_4.pcap",
+    "path": "datasets\\training\\train_whatsapp_transport_4.pcap",
+    "mode": "TRANSPORT",
+    "traffic_type": "WHATSAPP",
+    "split": "train"
+  },
+  {
+    "filename": "train_whatsapp_transport_5.pcap",
+    "path": "datasets\\training\\train_whatsapp_transport_5.pcap",
+    "mode": "TRANSPORT",
+    "traffic_type": "WHATSAPP",
+    "split": "train"
+  },
+  {
+    "filename": "train_email_tunnel_1.pcap",
+    "path": "datasets\\training\\train_email_tunnel_1.pcap",
+    "mode": "TUNNEL",
+    "traffic_type": "EMAIL",
+    "split": "train"
+  },
+  {
+    "filename": "train_email_tunnel_2.pcap",
+    "path": "datasets\\training\\train_email_tunnel_2.pcap",
+    "mode": "TUNNEL",
+    "traffic_type": "EMAIL",
+    "split": "train"
+  },
+  {
+    "filename": "train_email_tunnel_3.pcap",
+    "path": "datasets\\training\\train_email_tunnel_3.pcap",
+    "mode": "TUNNEL",
+    "traffic_type": "EMAIL",
+    "split": "train"
+  },
+  {
+    "filename": "train_email_tunnel_4.pcap",
+    "path": "datasets\\training\\train_email_tunnel_4.pcap",
+    "mode": "TUNNEL",
+    "traffic_type": "EMAIL",
+    "split": "train"
+  },
+  {
+    "filename": "train_email_tunnel_5.pcap",
+    "path": "datasets\\training\\train_email_tunnel_5.pcap",
+    "mode": "TUNNEL",
+    "traffic_type": "EMAIL",
+    "split": "train"
+  },
+  {
+    "filename": "train_email_transport_1.pcap",
+    "path": "datasets\\training\\train_email_transport_1.pcap",
+    "mode": "TRANSPORT",
+    "traffic_type": "EMAIL",
+    "split": "train"
+  },
+  {
+    "filename": "train_email_transport_2.pcap",
+    "path": "datasets\\training\\train_email_transport_2.pcap",
+    "mode": "TRANSPORT",
+    "traffic_type": "EMAIL",
+    "split": "train"
+  },
+  {
+    "filename": "train_email_transport_3.pcap",
+    "path": "datasets\\training\\train_email_transport_3.pcap",
+    "mode": "TRANSPORT",
+    "traffic_type": "EMAIL",
+    "split": "train"
+  },
+  {
+    "filename": "train_email_transport_4.pcap",
+    "path": "datasets\\training\\train_email_transport_4.pcap",
+    "mode": "TRANSPORT",
+    "traffic_type": "EMAIL",
+    "split": "train"
+  },
+  {
+    "filename": "train_email_transport_5.pcap",
+    "path": "datasets\\training\\train_email_transport_5.pcap",
+    "mode": "TRANSPORT",
+    "traffic_type": "EMAIL",
+    "split": "train"
+  },
+  {
+    "filename": "train_icmp_tunnel_1.pcap",
+    "path": "datasets\\training\\train_icmp_tunnel_1.pcap",
+    "mode": "TUNNEL",
+    "traffic_type": "ICMP",
+    "split": "train"
+  },
+  {
+    "filename": "train_icmp_tunnel_2.pcap",
+    "path": "datasets\\training\\train_icmp_tunnel_2.pcap",
+    "mode": "TUNNEL",
+    "traffic_type": "ICMP",
+    "split": "train"
+  },
+  {
+    "filename": "train_icmp_tunnel_3.pcap",
+    "path": "datasets\\training\\train_icmp_tunnel_3.pcap",
+    "mode": "TUNNEL",
+    "traffic_type": "ICMP",
+    "split": "train"
+  },
+  {
+    "filename": "train_icmp_tunnel_4.pcap",
+    "path": "datasets\\training\\train_icmp_tunnel_4.pcap",
+    "mode": "TUNNEL",
+    "traffic_type": "ICMP",
+    "split": "train"
+  },
+  {
+    "filename": "train_icmp_tunnel_5.pcap",
+    "path": "datasets\\training\\train_icmp_tunnel_5.pcap",
+    "mode": "TUNNEL",
+    "traffic_type": "ICMP",
+    "split": "train"
+  },
+  {
+    "filename": "train_icmp_transport_1.pcap",
+    "path": "datasets\\training\\train_icmp_transport_1.pcap",
+    "mode": "TRANSPORT",
+    "traffic_type": "ICMP",
+    "split": "train"
+  },
+  {
+    "filename": "train_icmp_transport_2.pcap",
+    "path": "datasets\\training\\train_icmp_transport_2.pcap",
+    "mode": "TRANSPORT",
+    "traffic_type": "ICMP",
+    "split": "train"
+  },
+  {
+    "filename": "train_icmp_transport_3.pcap",
+    "path": "datasets\\training\\train_icmp_transport_3.pcap",
+    "mode": "TRANSPORT",
+    "traffic_type": "ICMP",
+    "split": "train"
+  },
+  {
+    "filename": "train_icmp_transport_4.pcap",
+    "path": "datasets\\training\\train_icmp_transport_4.pcap",
+    "mode": "TRANSPORT",
+    "traffic_type": "ICMP",
+    "split": "train"
+  },
+  {
+    "filename": "train_icmp_transport_5.pcap",
+    "path": "datasets\\training\\train_icmp_transport_5.pcap",
+    "mode": "TRANSPORT",
+    "traffic_type": "ICMP",
+    "split": "train"
+  }
+]
