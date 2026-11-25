@@ -20,6 +20,12 @@ export async function fetchTestbedStatus() {
   return res.json();
 }
 
+export async function fetchMlMetrics() {
+  const res = await fetch('/api/ml/metrics');
+  if (!res.ok) return { available: false };
+  return res.json();
+}
+
 export async function analyzeSample(filename) {
   const res = await fetch(`/api/analyze/sample/${encodeURIComponent(filename)}`, { method: 'POST' });
   if (!res.ok) throw new Error(await res.text());
