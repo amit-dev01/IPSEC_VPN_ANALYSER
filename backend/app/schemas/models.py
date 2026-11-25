@@ -173,6 +173,7 @@ class ESPFlowStatistics(BaseModel):
     padding_uniformity: float = 0.0
     direction_ratio: float = 0.5
     size_histogram: List[SizeBin] = Field(default_factory=list)
+    iscx_features: List[float] = Field(default_factory=list)
     anomaly_flags: List[str] = Field(default_factory=list)
 
 
@@ -183,7 +184,10 @@ class TrafficPrediction(BaseModel):
     inferred_mode: OperatingMode
     mode_confidence: float
     top_contributing_features: Dict[str, float] = Field(default_factory=dict)
+    shap_explanations: Dict[str, float] = Field(default_factory=dict)
     class_probabilities: Dict[str, float] = Field(default_factory=dict)
+    anomaly_score: float = 0.0
+    iscx_secondary_prediction: Optional[str] = None
     anomaly_flags: List[str] = Field(default_factory=list)
 
 
