@@ -243,6 +243,20 @@ def download_json_report(session_id: str):
     return JSONResponse(content=result.model_dump(mode="json"))
 
 
+@app.get("/{full_path:path}")
+def serve_spa_routes(full_path: str):
+    """Serves React SPA index.html for client-side routes (/overview, /inspector, /traffic-lab, etc.)."""
+    if full_path.startswith("api/") or full_path == "api" or full_path.startswith("assets/"):
+        raise HTTPException(status_code=404, detail="Endpoint or asset not found")
+    index_file = os.path.join(FRONTEND_DIST_DIR, "index.html")
+    if os.path.exists(index_file):
+        return FileResponse(index_file)
+    return HTMLResponse(
+        "<h2>Frontend build not found</h2><p>Run <code>npm run build</code> inside <code>frontend/</code>.</p>",
+        status_code=200
+    )
+
+
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run("backend.app.main:app", host="127.0.0.1", port=8000, reload=True)

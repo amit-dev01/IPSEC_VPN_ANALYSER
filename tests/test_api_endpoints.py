@@ -83,7 +83,11 @@ def test_active_ike_scanner_endpoints():
     assert h_data["overall_grade"] in ("A+", "A-")
 
 
-def test_dashboard_root_serving():
-    res = client.get("/")
-    assert res.status_code == 200
-    assert "IPsec Sentinel AI" in res.text
+def test_dashboard_root_and_spa_routing():
+    for route in ["/", "/overview", "/inspector", "/traffic-lab", "/scanner", "/remediation"]:
+        res = client.get(route)
+        assert res.status_code == 200
+        assert "IPsec Sentinel AI" in res.text
+
+    missing_api = client.get("/api/does-not-exist")
+    assert missing_api.status_code == 404
