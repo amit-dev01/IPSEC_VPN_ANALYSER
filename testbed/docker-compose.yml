@@ -1,0 +1,47 @@
+services:
+  peer-a:
+    image: alpine:latest
+    container_name: ipsec-peer-a
+    cap_add:
+      - NET_ADMIN
+      - SYS_MODULE
+    networks:
+      ipsec-net:
+        ipv4_address: 192.168.100.10
+    volumes:
+      - ./configs/peer-a:/etc/swanctl:ro
+      - ./captures:/captures
+      - ./traffic:/traffic:ro
+    command: >
+      sh -c "apk add --no-cache strongswan tcpdump python3 iperf3 iproute2 curl &&
+             sysctl -w net.ipv4.ip_forward=1 &&
+             mkdir -p /run/charon &&
+             /usr/lib/ipsec/charon --use-syslog &
+             sleep 2 && swanctl --load-all &&
+             sleep infinity"
+
+  peer-b:
+    image: alpine:latest
+    container_name: ipsec-peer-b
+    cap_add:
+      - NET_ADMIN
+      - SYS_MODULE
+    networks:
+      ipsec-net:
+        ipv4_address: 192.168.100.20
+    volumes:
+      - ./configs/peer-b:/etc/swanctl:ro
+    command: >
+      sh -c "apk add --no-cache strongswan tcpdump python3 iperf3 iproute2 curl &&
+             sysctl -w net.ipv4.ip_forward=1 &&
+             mkdir -p /run/charon &&
+             /usr/lib/ipsec/charon --use-syslog &
+             sleep 2 && swanctl --load-all &&
+             sleep infinity"
+
+networks:
+  ipsec-net:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 192.168.100.0/24
