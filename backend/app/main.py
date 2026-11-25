@@ -5,6 +5,7 @@ Active IKE Gateway Scanning, Docker testbed inspection, and multi-tier report ex
 Serves the built React SPA from frontend/dist.
 """
 
+import json
 import os
 import shutil
 import subprocess
@@ -44,6 +45,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__fil
 SAMPLES_DIR = os.path.join(BASE_DIR, "datasets", "samples")
 REAL_CAPTURES_DIR = os.path.join(BASE_DIR, "datasets", "real_captures")
 REPORTS_DIR = os.path.join(BASE_DIR, "reports")
+ML_METRICS_PATH = os.path.join(BASE_DIR, "ml_engine", "models", "evaluation_metrics.json")
 FRONTEND_DIST_DIR = os.path.join(BASE_DIR, "frontend", "dist")
 FRONTEND_ASSETS_DIR = os.path.join(FRONTEND_DIST_DIR, "assets")
 os.makedirs(REPORTS_DIR, exist_ok=True)
@@ -165,6 +167,17 @@ def delete_session(session_id: str):
 def active_ike_scan(req: ActiveScanRequest):
     """Actively probes an IPsec VPN gateway over UDP to audit accepted cipher/DH suites."""
     return ike_scanner.scan(req)
+
+
+@app.get("/api/ml/metrics")
+def get_ml_metrics():
+    """Returns LightGBM/XGBoost/ExtraTrees/MLP 5-fold CV benchmarks, confusion matrices, and SHAP importances."""
+    if not os.path.exists(ML_METRICS_PATH):
+        return {"available": False}
+    with open(ML_METRICS_PATH, "r") as f:
+        data = json.load(f)
+    data["available"] = True
+    return data
 
 
 @app.get("/api/testbed/status")

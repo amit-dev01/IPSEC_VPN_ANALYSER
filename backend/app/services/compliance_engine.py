@@ -394,6 +394,17 @@ class CryptographicComplianceEngine:
                         impact="Potential undetected egress of sensitive enterprise datasets",
                         remediation_advice="Correlate tunnel byte volume against internal user DLP baselines."
                     ))
+                elif "ML_OUTLIER_ANOMALY" in flag and not any("C2_BEACON" in x or "EXFILTRATION" in x for x in pred.anomaly_flags):
+                    threats.append(ThreatItem(
+                        threat_id="THREAT-ML-OUTLIER",
+                        title="Unsupervised Zero-Day ESP Flow Anomaly (IsolationForest)",
+                        severity=SeverityLevel.MEDIUM,
+                        cvss_score=5.8,
+                        mitre_technique_id="T1572 (Protocol Tunneling)",
+                        description=f"Flow {pred.flow_id} scored {int(pred.anomaly_score * 100)}% anomalous against learned baseline IPsec traffic distributions.",
+                        impact="Potential covert tunneling or non-standard encapsulated protocol behavior",
+                        remediation_advice="Inspect endpoint SPI policy and compare flow timing against baseline traffic profiles."
+                    ))
 
         return threats
 
