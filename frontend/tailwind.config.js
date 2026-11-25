@@ -8,12 +8,20 @@ export default {
   theme: {
     extend: {
       colors: {
-        dark: {
-          800: '#1e293b',
-          850: '#162033',
-          900: '#0f172a',
-          950: '#070b14',
+        obsidian: '#0a0a0a',
+        gold: {
+          base: '#a78b71',
+          light: '#c9b8a0',
+          hover: '#e8d5b7',
         },
+      },
+      fontFamily: {
+        serif: ['"Playfair Display"', 'Georgia', 'serif'],
+        sans: ['"Inter"', 'system-ui', '-apple-system', 'sans-serif'],
+      },
+      transitionTimingFunction: {
+        luxury: 'cubic-bezier(0.4, 0, 0.2, 1)',
+        reveal: 'cubic-bezier(0.16, 1, 0.3, 1)',
       },
     },
   },
